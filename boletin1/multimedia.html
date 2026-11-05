@@ -1,60 +1,68 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Ejercicio 5: multimedia </title>
-        <meta charset="UTF-8"/>
-    </head>
-    <body>
-        <h1>Marcos e integracion externa</h1> 
-        <section id="seccion1">
-        <iframe width="560" height="315" loading="lazy" title="Vídeo tutorial de HTML5" src="https://www.youtube.com/embed/EvKm8yhM7V8?si=VR6va12yoDZWHfPz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-       <hr>
-       </section>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ejercicio 5: multimedia</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 900px; margin: 0 auto; }
+        section { margin-bottom: 20px; }
+        iframe, embed, object { max-width: 100%; }
+        svg, canvas { display: inline-block; vertical-align: top; margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Marcos e integracion externa</h1>
 
-
-       <section id="seccion2-pdf">
-         <embed src="../media/apuntes.pdf" type="application/pdf" width="100%" height="500px">
+    <section id="seccion1">
+        <iframe width="560" height="315" loading="lazy" title="Vídeo tutorial de HTML5" src="https://www.youtube.com/embed/EvKm8yhM7V8?si=VR6va12yoDZWHfPz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <hr>
-        </section>
-        <section id="seccion2-object">
-        <object data="https://www.wikipedia.org" type="text/html" width="100%" height="500px">
-            <p>Tu navegador no admite la visualización de este objeto incrustado</p>   
+    </section>
+
+    <section id="seccion2-pdf">
+        <embed src="../media/apuntes.pdf" type="application/pdf" width="100%" height="400px">
+        <hr>
+    </section>
+
+    <section id="seccion2-object">
+        <object data="https://www.wikipedia.org" type="text/html" width="100%" height="400px">
+            <p>Tu navegador no admite la visualización de este objeto incrustado</p>
         </object>
         <hr>
-        </section>
+    </section>
 
-
-        <section id="seccion-video">
-        <h1>Reproductores Multimedia Nativos</h1> 
+    <section id="seccion-video">
+        <h1>Reproductores Multimedia Nativos</h1>
         <video controls width="640" poster="../media/portada.jpg">
-        <source src="../media/muestra.mp4" type="video/mp4">
-        <source src="../media/muestra.webm" type="video/webm">
-        <p>Tu navegador no admite la reproducción de vídeo HTML5.</p> 
+            <source src="../media/muestra.mp4" type="video/mp4">
+            <source src="../media/muestra.webm" type="video/webm">
+            <p>Tu navegador no admite la reproducción de vídeo HTML5.</p>
         </video>
-        </section>
-        <hr> 
+        <hr>
+    </section>
 
-        <section id="seccion3">
+    <section id="seccion3">
         <h1>Gráficos vectoriales y mapas de bits</h1>
+        
         <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-        <rect width="200" height="200" fill="blue" />
-        <circle cx="100" cy="100" r="50" fill="yellow" stroke="red" stroke-width="4" />
+            <rect width="200" height="200" fill="blue" />
+            <circle cx="100" cy="100" r="50" fill="yellow" stroke="red" stroke-width="4" />
         </svg>
 
-
         <canvas id="miLienzo" width="300" height="150" style="border:1px solid #000;">
-        <p>Tu navegador no soporta el elemento Canvas.</p>
+            <p>Tu navegador no soporta el elemento Canvas.</p>
         </canvas>
+    </section>
 
-        <script>
+    <script>
         const canvas = document.getElementById('miLienzo');
         const ctx = canvas.getContext('2d');
         ctx.fillStyle = 'green';
         ctx.fillRect(10, 10, 150, 80);
+        ctx.beginPath();
         ctx.moveTo(0, 0);
-        ctx.lineTo(200, 100); 
-        ctx.stroke(); 
-        </script>
-        </section>
-    </body>
-</html> 
+        ctx.lineTo(200, 100);
+        ctx.strokeStyle = 'black';
+        ctx.stroke();
+    </script>
+</body>
+</html>
