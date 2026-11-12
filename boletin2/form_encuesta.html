@@ -1,22 +1,56 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Formulario de Autenticación</title>
-    </head>
-    <body>
-        <h1>Formulario de Autenticación</h1>
-        <form action="https://lm.ciclo.iesnervion.es/login.php" method="POST">
-            <label for="usuario">Nombre de usuario o Email:</label>
-            <input type="text" id="usuario" name="usuario" placeholder="usuario@dominio.com" required>
-            <br><br>
-            <label for="contrasena">Contraseña:</label>
-            <input type="password" id="contrasena" name="contrasena" required>
-            <br><br>
-            <label for="recordar">Recordar sesión:</label>
-            <input type="checkbox" id="recordar" name="recordar">
-            <br><br>
-            <button type="submit">Iniciar Sesión</button>
-        </form>
-    </body>
-</html>
+<form action="https://lm.ciclo.iesnervion.es/encuesta.php" method="POST">
+    <fieldset>
+        <legend>Datos Académicos</legend>
+        <div>
+            <label for="nombre">Nombre y Apellidos:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <br>
+        <div>
+            <label for="ciclo">Ciclo Formativo:</label>
+            <select id="ciclo" name="ciclo">
+                <option value="DAM" selected>DAM</option>
+                <option value="DAW">DAW</option>
+                <option value="ASIR">ASIR</option>
+            </select>
+        </div>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Preferencias Técnicas</legend>
+        <div>
+            <p>Lenguaje principal:</p>
+            <input type="radio" id="java" name="lenguaje" value="Java">
+            <label for="java">Java</label>
+
+            <input type="radio" id="python" name="lenguaje" value="Python">
+            <label for="python">Python</label>
+
+            <input type="radio" id="csharp" name="lenguaje" value="C#">
+            <label for="csharp">C#</label>
+
+            <input type="radio" id="javascript" name="lenguaje" value="JavaScript">
+            <label for="javascript">JavaScript</label>
+        </div>
+        <br>
+        <div>
+            <p>Entornos de trabajo habituales:</p>
+            <input type="checkbox" id="linux" name="entornos[]" value="Linux">
+            <label for="linux">Linux</label>
+
+            <input type="checkbox" id="windows" name="entornos[]" value="Windows">
+            <label for="windows">Windows</label>
+
+            <input type="checkbox" id="macos" name="entornos[]" value="macOS">
+            <label for="macos">macOS</label>
+        </div>
+        <br>
+        <div>
+            <label for="comentarios">Comentarios / Experiencia previa:</label><br>
+            <textarea id="comentarios" name="comentarios" rows="4" cols="40"></textarea>
+        </div>
+    </fieldset>
+    <br>
+    <button type="reset">Restablecer</button>
+    <button type="submit">Enviar Datos</button>
+</form>

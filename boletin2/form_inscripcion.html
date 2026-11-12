@@ -1,0 +1,38 @@
+<form action="https://lm.ciclo.iesnervion.es/inscripcion.php" method="POST" enctype="multipart/form-data">
+    <div>
+        <label for="equipo">Nombre del Equipo:</label>
+        <input type="text" id="equipo" name="equipo" autofocus>
+    </div>
+    <br>
+    <div>
+        <label for="codigo_registro">Código de Registro:</label>
+        <input type="text" id="codigo_registro" name="codigo_registro" value="HACK-2026-SEV" readonly>
+    </div>
+    <br>
+    <div>
+        <label for="fecha">Fecha de llegada:</label>
+        <input type="date" id="fecha" name="fecha" min="2026-12-01" max="2026-12-15">
+    </div>
+    <br>
+    <div>
+        <label for="hora">Hora de presentación:</label>
+        <input type="time" id="hora" name="hora">
+    </div>
+    <br>
+    <div>
+        <label for="color">Color identificativo del equipo:</label>
+        <input type="color" id="color" name="color">
+    </div>
+    <br>
+    <div>
+        <label for="nivel_java">Nivel estimado de Java (0 a 100):</label>
+        <input type="range" id="nivel_java" name="nivel_java" min="0" max="100" step="5">
+    </div>
+    <br>
+    <div>
+        <label for="expediente">Subir Expediente / CV (PDF):</label>
+        <input type="file" id="expediente" name="expediente" accept=".pdf">
+    </div>
+    <br>
+    <button type="submit">Inscribir Equipo</button>
+</form>
